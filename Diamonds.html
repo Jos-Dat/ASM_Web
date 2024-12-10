@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamonds</title>
+    <link rel="stylesheet" href="Css/Home.css">
+    <link rel="stylesheet" href="Css/Common.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Thương Gia Dương Jewelry</div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="/Html/WeddingJewelry.html">Wedding Jewelry</a></li>
+                <li><a href="/Html/Diamonds.html">Diamonds</a></li>
+                <li><a href="/Html/Profile.html">Profile</a></li>
+                <li><a href="/Html/Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-cart">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search products..." 
+                onkeydown="handleSearch(event)">
+            <button class="cart-icon" onclick="goToCart()">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>        
+        
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <img src="Images/banner.jpg" alt="Jewelry Banner">
+        <div class="banner-text">
+        </div>
+    </section>
+
+    <section class="product-list">
+        <div class="product-item" data-name="Diamond Earrings 1" data-price="52850000" data-image="Images/d1.jpg">
+            <img src="Images/d1.jpg" alt="Diamond Earrings 1">
+            <p>Diamond Earrings 1</p>
+            <span>52,850,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Earrings 2" data-price="53400000" data-image="Images/d2.jpg">
+            <img src="Images/d2.jpg" alt="Diamond Earrings 2">
+            <p>Diamond Earrings 2</p>
+            <span>53,400,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Necklace 1" data-price="74060000" data-image="Images/d3.jpg">
+            <img src="Images/d3.jpg "alt="Diamond Necklace 1">
+            <p>Diamond Necklace 1</p>
+            <span>74,060,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Necklace 2" data-price="84260000" data-image="Images/d4.jpg">
+            <img src="Images/d4.jpg" alt="Diamond Necklace 2">
+            <p>Diamond Necklace 2</p>
+            <span>84,260,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Pendant Diamond Shell" data-price="65320000" data-image="Images/d5.jpg">
+            <img src="Images/d5.jpg" alt="Pendant Diamond Shell">
+            <p>Pendant Diamond Shell</p>
+            <span>65,320,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Men's Diamond Ring" data-price="114920000" data-image="Images/DMR0076ARM-WG01A-g1.jpg">
+            <img src="Images/DMR0076ARM-WG01A-g1.jpg" alt="Men's Diamond Ring">
+            <p>Men's Diamond Ring</p>
+            <span>114,920,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Ring" data-price="86260000" data-image="Images/d6.jpg">
+            <img src="Images/d6.jpg" alt="Diamond Ring">
+            <p>Diamond Ring</p>
+            <span>86,260,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>        
+        <div class="product-item" data-name="Diamond Earrings" data-price="105710000" data-image="Images/bong-tai-kim-cuong-QSN0472AEW-WG01A-g1.jpg">
+            <img src="Images/bong-tai-kim-cuong-QSN0472AEW-WG01A-g1.jpg" alt="Diamond Earrings">
+            <p>Diamond Earrings</p>
+            <span>105,710,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="CZ earrings" data-price="4710000 VND" data-image="Images/d7.jpg">
+            <img src="Images/d7.jpg" alt="CZ earrings">
+            <p>CZ Earrings</p>
+            <span>4,710,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="CZ earrings" data-price="6750000" data-image="Images/d8.jpg">
+            <img src="Images/d8.jpg" alt="CZ earrings">
+            <p>CZ Earrings 2</p>
+            <span>6,750,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </section>
+    
+
+    <div id="customAlert" class="custom-alert" style="display: none;">
+        <p id="alertMessage"></p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Images/logo.jpg" alt="Logo">
+                <p>Thương Gia Dương Jewelry</p>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <p>📍 532-534 Cong Hoa, Ward 13, Tan Binh District, Ho Chi Minh City</p>
+                <p>✉️ <a href="mailto:care@thuonggiaduong.com">care@thuonggiaduong.com</a></p>
+                <p>📞 1900 636 526 - (028) 62 818 818</p>
+                <p>📍 <a href="#">Showrooms</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT US</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+                <a href="#">Warranty Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Exchange Policy</a>
+                <a href="#">Shopping Guide</a>
+                <a href="#">Size Guide</a>
+            </div>
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">▶️</a>
+                </div>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h4>Subscribe to Our Newsletter</h4>
+            <input type="email" placeholder="Enter your email address">
+            <button>Subscribe</button>
+        </div>
+    </footer>
+    <script src="Common.js"></script>
+    <script>
+        // Redirect to the cart page
+        function goToCart() {
+            if (cart.length === 0) {
+                showAlert("Your cart is empty!");
+                return;
+            }
+    
+            // Store cart in sessionStorage to pass data to the cart page
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+    
+            // Redirect to the cart page
+            window.location.href = "cart.html";
+        }
+    
+        // Initialize cart data
+        let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+        document.getElementById("cart-count").textContent = cart.length;
+    
+        // Search functionality
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                const query = event.target.value.toLowerCase();
+                const products = document.querySelectorAll(".product-item");
+                let found = false;
+    
+                products.forEach(product => {
+                    const name = product.getAttribute("data-name").toLowerCase();
+                    if (name.includes(query)) {
+                        product.style.display = "block"; // Hiển thị sản phẩm khớp
+                        found = true;
+                    } else {
+                        product.style.display = "none"; // Ẩn sản phẩm không khớp
+                    }
+                });
+    
+                if (!found) {
+                    showAlert("Không tìm thấy sản phẩm phù hợp!");
+                }
+            }
+        }
+    
+        // Add to cart functionality
+        document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const product = this.parentElement;
+                const name = product.getAttribute("data-name");
+                const price = parseFloat(product.getAttribute("data-price")); // Chuyển giá thành số
+                const image = product.getAttribute("data-image");
+    
+                // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+                const existingProduct = cart.find(item => item.name === name);
+    
+                if (existingProduct) {
+                    // Nếu sản phẩm đã tồn tại, tăng số lượng
+                    existingProduct.quantity += 1;
+                } else {
+                    // Nếu chưa tồn tại, thêm sản phẩm mới với quantity = 1
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+    
+                // Cập nhật giỏ hàng trong sessionStorage
+                sessionStorage.setItem("cart", JSON.stringify(cart));
+    
+                // Cập nhật hiển thị số lượng giỏ hàng
+                document.getElementById("cart-count").textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+                showAlert("Product added to cart!");
+            });
+        });
+    
+        // Thêm sự kiện lắng nghe thay đổi cho các dropdown
+        document.querySelectorAll(".filters select").forEach(select => {
+            select.addEventListener("change", filterProducts);
+        });
+    
+        // Thông báo tùy chỉnh
+        function showAlert(message) {
+            const alertBox = document.getElementById("customAlert");
+            const alertMessage = document.getElementById("alertMessage");
+    
+            alertMessage.textContent = message;
+            alertBox.style.display = "block";
+        }
+    
+        function closeAlert() {
+            document.getElementById("customAlert").style.display = "none";
+        }
+    </script>
+    
+</body>
+</html>

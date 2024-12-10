@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Jewelry</title>
+    <link rel="stylesheet" href="Css/Home.css">
+    <link rel="stylesheet" href="Css/Common.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Thương Gia Dương Jewelry</div>
+        <nav>
+            <ul>
+                <li><a href="/Html/Home.html">Home</a></li>
+                <li><a href="/Html/WeddingJewelry.html">Wedding Jewelry</a></li>
+                <li><a href="/Html/Diamonds.html">Diamonds</a></li>
+                <li><a href="/Html/Profile.html">Profile</a></li>
+                <li><a href="/Html/Contact.html">Contact</a></li>
+            </ul> 
+        </nav>
+        <div class="search-cart">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search wedding jewelry..." 
+                onkeydown="handleSearch(event)">
+            <button class="cart-icon" onclick="goToCart()">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+    <!-- Banner -->
+    <section class="banner">
+        <img src="Images/Banner2.webp" alt="Wedding Jewelry Banner">
+        <div class="banner-text">
+            <h1>Elegant Wedding Jewelry</h1>
+        </div>
+    </section>
+    <!-- Product List -->
+    <section class="product-list" id="product-list">
+        <div class="product-item" data-name="Mom's Love Bracelet" data-price="9480000" data-image="Images/vong-tay-mom-love-LPBL0008BBWWG-06-g1.jpg">
+            <img src="Images/vong-tay-mom-love-LPBL0008BBWWG-06-g1.jpg" alt="Mom's Love Bracelet">
+            <p>Mom's Love Bracelet</p>
+            <span>9,480,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Earrings" data-price="105710000" data-image="Images/bong-tai-kim-cuong-QSN0472AEW-WG01A-g1.jpg">
+            <img src="Images/bong-tai-kim-cuong-QSN0472AEW-WG01A-g1.jpg" alt="Diamond Earrings">
+            <p>Diamond Earrings</p>
+            <span>105,710,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Ring" data-price="27020000" data-image="Images/nhan-kim-cuong-K1B-DEA0110R-g1.jpg">
+            <img src="Images/nhan-kim-cuong-K1B-DEA0110R-g1.jpg" alt="Diamond Ring">
+            <p>Diamond Ring</p>
+            <span>27,020,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Men's Diamond Ring" data-price="114920000" data-image="Images/DMR0076ARM-WG01A-g1.jpg">
+            <img src="Images/DMR0076ARM-WG01A-g1.jpg" alt="Men's Diamond Ring">
+            <p>Men's Diamond Ring</p>
+            <span>114,920,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="CZ Ring" data-price="7470000" data-image="Images/VRF0865ARW-RG06A-g1.jpg">
+            <img src="Images/VRF0865ARW-RG06A-g1.jpg" alt="CZ Ring">
+            <p>CZ Ring</p>
+            <span>7,470,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Proposal Ring" data-price="11370000" data-image="Images/VSR0074ERW-WG06A-g1.jpg">
+            <img src="Images/VSR0074ERW-WG06A-g1.jpg" alt="Proposal Ring">
+            <p>Proposal Ring</p>
+            <span>11,370,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Proposal Ring Gold" data-price="12110000" data-image="Images/VSR1118ARW-YG06A-g1.jpg">
+            <img src="Images/VSR1118ARW-YG06A-g1.jpg" alt="Proposal Ring Gold">
+            <p>Proposal Ring Gold</p>
+            <span>12,110,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Pearl Ring" data-price="10320000" data-image="Images/nhan-ngoc-trai-P1B-LPNT0050R-g1.jpg">
+            <img src="Images/nhan-ngoc-trai-P1B-LPNT0050R-g1.jpg" alt="Pearl Ring">
+            <p>Pearl Ring</p>
+            <span>10,320,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Wedding Ring Gold 1" data-price="7910000" data-image="Images/nhan-cuoi-VWR0139ARW-YG06A-g1.jpg">
+            <img src="Images/nhan-cuoi-VWR0139ARW-YG06A-g1.jpg" alt="Wedding Ring Gold 1">
+            <p>Wedding Ring Gold 1</p>
+            <span>7,910,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Wedding Ring Gold 2" data-price="7780000" data-image="Images/nhan-cuoi-VWR0139ARM-YG06A-g1.jpg">
+            <img src="Images/nhan-cuoi-VWR0139ARM-YG06A-g1.jpg" alt="Wedding Ring Gold 2">
+            <p>Wedding Ring Gold 2</p>
+            <span>7,780,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Ring 1" data-price="29130000" data-image="Images/nhan-kim-cuong-K3B-DFH0111R-g1.jpg">
+            <img src="Images/nhan-kim-cuong-K3B-DFH0111R-g1.jpg" alt="Diamond Ring 1">
+            <p>Diamond Ring 1</p>
+            <span>29,130,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Wedding Diamond Ring Set" data-price="23190000" data-image="Images/nhan-cuoi-kim-cuong-vang-trang-18k-DWR0037R-D02200150-g1.jpgpg">
+            <img src="Images/nhan-cuoi-kim-cuong-vang-trang-18k-DWR0037R-D02200150-g1.jpg" alt="Wedding Diamond Ring Set">
+            <p>Wedding Set</p>
+            <span>23,190,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Wedding Ring Silver-Gold" data-price="10230000" data-image="Images/ring1.jpg">
+            <img src="Images/ring1.jpg" alt="Wedding Ring Silver-Gold">
+            <p>Wedding Ring Silver-Gold</p>
+            <span>10,230,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Wedding Ring Gold 3" data-price="8560000" data-image="Images/ring2.jpg">
+            <img src="Images/ring2.jpg" alt="Wedding Ring Gold 3">
+            <p>Wedding Ring Gold 3</p>
+            <span>8,560,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Wedding Ring 2" data-price="10850000" data-image="Images/ring3.jpg">
+            <img src="Images/ring3.jpg" alt="Diamond Wedding Ring 2">
+            <p>Diamond Wedding Ring 2</p>
+            <span>10,850,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Wedding Ring 3" data-price="9260000" data-image="Images/ring4.jpg">
+            <img src="Images/ring4.jpg" alt="Diamond Wedding Ring 3">
+            <p>Diamond Wedding Ring 3</p>
+            <span>9,260,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <!-- Second set of 8 products -->
+        <div class="product-item" data-name="Proposal Ring 1" data-price="9580000" data-image="Images/ring5.jpg">
+            <img src="Images/ring5.jpg" alt="Proposal Ring 1">
+            <p>Proposal Ring 1</p>
+            <span>9,580,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Proposal Ring 2" data-price="7920000" data-image="Images/ring6.jpg">
+            <img src="Images/ring6.jpg" alt="Proposal Ring 2">
+            <p>Proposal Ring 2</p>
+            <span>7,920,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Proposal Ring 3" data-price="6710000" data-image="Images/ring7.jpg">
+            <img src="Images/ring7.jpg" alt="Proposal Ring 3">
+            <p>Proposal Ring 3</p>
+            <span>6,710,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Proposal Ring Gold" data-price="8340000" data-image="Images/ring8.jpg">
+            <img src="Images/ring8.jpg" alt="Proposal Ring Gold">
+            <p>Proposal Ring Gold</p>
+            <span>8,340,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Proposal Ring Diamond" data-price="8080000" data-image="Images/ring9.jpg">
+            <img src="Images/ring9.jpg" alt="Proposal Ring Diamond">
+            <p>Proposal Ring Diamond</p>
+            <span>8,080,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Elegant Proposal Ring" data-price="7690000" data-image="Images/ring10.jpg">
+            <img src="Images/ring10.jpg" alt="Elegant Proposal Ring">
+            <p>Elegant Proposal Ring</p>
+            <span>7,690,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Luxury Proposal Ring" data-price="8870000" data-image="Images/ring11.jpg">
+            <img src="Images/ring11.jpg" alt="Luxury Proposal Ring">
+            <p>Luxury Proposal Ring</p>
+            <span>8,870,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-item" data-name="Diamond Wedding Ring" data-price="23000000" data-image="Images/ring12.jpg">
+            <img src="Images/ring12.jpg" alt="Diamond Wedding Ring">
+            <p>Diamond Wedding Ring</p>
+            <span>23,000,000 VND</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </section>
+    <div id="customAlert" class="custom-alert" style="display: none;">
+        <p id="alertMessage"></p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Images/logo.jpg" alt="Logo">
+                <p>Thương Gia Dương Jewelry</p>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <p>📍 532-534 Cong Hoa, Ward 13, Tan Binh District, Ho Chi Minh City</p>
+                <p>✉️ <a href="mailto:care@thuonggiaduong.com">care@thuonggiaduong.com</a></p>
+                <p>📞 1900 636 526 - (028) 62 818 818</p>
+                <p>📍 <a href="#">Showrooms</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT US</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+                <a href="#">Warranty Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Exchange Policy</a>
+                <a href="#">Shopping Guide</a>
+                <a href="#">Size Guide</a>
+            </div>
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">▶️</a>
+                </div>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h4>Subscribe to Our Newsletter</h4>
+            <input type="email" placeholder="Enter your email address">
+            <button>Subscribe</button>
+        </div>
+    </footer>
+    <script src="Common.js"></script>
+    <script>
+        
+    // Redirect to the cart page
+    function goToCart() {
+        window.location.href = "cart.html";
+    }
+
+    // Initialize cart data
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").textContent = cart.length;
+
+    // Navigate to Cart
+    function goToCart() {
+        if (cart.length === 0) {
+            showAlert("Your cart is empty!");
+            return;
+        }
+
+        // Store cart in sessionStorage to pass data to the cart page
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+
+        // Redirect to the cart page
+        window.location.href = "cart.html";
+    }
+    // Search functionality
+    function handleSearch(event) {
+        if (event.key === "Enter") {
+            const query = event.target.value.toLowerCase();
+            const products = document.querySelectorAll(".product-item");
+            let found = false;
+
+            products.forEach(product => {
+                const name = product.getAttribute("data-name").toLowerCase();
+                if (name.includes(query)) {
+                    product.style.display = "block"; // Hiển thị sản phẩm khớp
+                    found = true;
+                } else {
+                    product.style.display = "none"; // Ẩn sản phẩm không khớp
+                }
+            });
+
+            if (!found) {
+                showAlert("Không tìm thấy sản phẩm phù hợp!");
+            }
+        }
+    }
+    // Thêm sự kiện lắng nghe thay đổi cho các dropdown
+    document.querySelectorAll(".filters select").forEach(select => {
+        select.addEventListener("change", filterProducts);
+    });
+   // Add to cart functionality
+   document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        const product = this.parentElement;
+        const name = product.getAttribute("data-name");
+        const price = parseFloat(product.getAttribute("data-price")); // Chuyển giá thành số
+        const image = product.getAttribute("data-image");
+        // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+        const existingProduct = cart.find(item => item.name === name);
+        if (existingProduct) {
+            // Nếu sản phẩm đã tồn tại, tăng số lượng
+            existingProduct.quantity += 1;
+        } else {
+            // Nếu chưa tồn tại, thêm sản phẩm mới với quantity = 1
+            cart.push({ name, price, image, quantity: 1 });
+        }
+        // Cập nhật giỏ hàng trong sessionStorage
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+        // Cập nhật hiển thị số lượng giỏ hàng
+        document.getElementById("cart-count").textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        showAlert("Product added to cart!");
+    });
+});
+        // Thêm sự kiện lắng nghe thay đổi cho các dropdown
+        document.querySelectorAll(".filters select").forEach(select => {
+            select.addEventListener("change", filterProducts);
+        });
+        // Thông báo tùy chỉnh
+        function showAlert(message) {
+            const alertBox = document.getElementById("customAlert");
+            const alertMessage = document.getElementById("alertMessage");
+            alertMessage.textContent = message;
+            alertBox.style.display = "block";
+        }
+        function closeAlert() {
+            document.getElementById("customAlert").style.display = "none";
+        }
+    </script>
+</body>
+</html>

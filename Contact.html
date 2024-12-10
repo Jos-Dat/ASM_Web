@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Thuong Gia Duong Jewelry</title>
+    <link rel="stylesheet" href="Css/Home.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4caf50;
+        }
+        /* Banner */
+        .contact-banner {
+            display: flex; /* Sử dụng flexbox để đặt ảnh cạnh nhau */
+            justify-content: center; /* Căn giữa hai ảnh trong phần banner */
+            gap: 20px; /* Tạo khoảng cách giữa hai ảnh */
+            margin: 20px 0;
+        }
+
+        .contact-banner img {
+            max-width: 35%; /* Đặt kích thước tối đa cho mỗi ảnh (chia đều không gian) */
+            height: auto; /* Giữ tỷ lệ ảnh tự nhiên */
+            border-radius: 5px; /* Bo tròn các góc của ảnh */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+            transition: transform 0.3s; /* Hiệu ứng khi hover */
+        }
+
+        .contact-banner img:hover {
+            transform: scale(1.05); /* Phóng to nhẹ khi hover */
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-container .box {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #4caf50;
+        }
+
+        .contact-container p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .contact-container a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+        .logo-container {
+            text-align: center; /* Căn giữa logo trong phần "About Us" */
+            margin-top: 15px;   /* Tạo khoảng cách giữa logo và nội dung phía trên */
+        }
+        
+        .logo-small {
+            max-width: 200px; /* Đặt chiều rộng tối đa của logo */
+            height: 200px;    /* Tự động điều chỉnh chiều cao theo tỷ lệ */
+            opacity: 0.8;    /* Làm logo hơi trong suốt để không quá nổi bật */
+            transition: opacity 0.3s; /* Hiệu ứng hover */
+        }
+        
+        .logo-small:hover {
+            opacity: 1; /* Khi hover, làm logo rõ ràng hơn */
+        }
+        
+        /* Contact Form */
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Adjusting reCAPTCHA alignment */
+        .contact-form .recaptcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Tạo khoảng cách nhỏ giữa checkbox và chữ */
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ddd;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer ul li a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Thuong Gia Duong Jewelry</div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="/Html/WeddingJewelry.html">Wedding Jewelry</a></li>
+                <li><a href="/Html/Diamonds.html">Diamonds</a></li>
+                <li><a href="/Html/Profile.html">Profile</a></li>
+                <li><a href="/Html/Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Banner -->
+    <section class="contact-banner">
+        <img src="Images/C1.jpg" alt="Contact Us Banner">
+        <img src="Images/c3.jpg" alt="Additional Banner">
+    </section>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="box">
+                <h3>Contact Information</h3>
+                <p>📍 Address: 532-534 Cong Hoa, Ward 13, Tan Binh District, Ho Chi Minh City</p>
+                <p>✉️ Email: <a href="mailto:care@thuonggiaduong.com">care@thuonggiaduong.com</a></p>
+                <p>📞 Hotline: 1900 636 526 - (028) 62 818 818</p>
+            </div>
+            <div class="box">
+                <h3>About Thuong Gia Duong Jewelry</h3>
+                <p>We are committed to treating our customers like family and providing them with the highest quality products. 
+                   With trust and care, we ensure that every piece of jewelry brings satisfaction and elegance to your life.</p>
+                <div class="logo-container">
+                    <img src="Images/logo.jpg" alt="Thuong Gia Duong Logo" class="logo-small">
+                </div>
+            </div>
+            <!-- Contact Form -->
+            <div class="box contact-form">
+                <h3>Contact Us</h3>
+                <form action="/submit-contact" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="phone" placeholder="Your Phone Number" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Thuong Gia Duong Jewelry. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

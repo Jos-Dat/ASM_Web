@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Jewelry</title>
+    <link rel="stylesheet" href="Css/Cart.css">
+    <link rel="stylesheet" href="Css/Common.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Thương Gia Dương Jewelry</div>
+        <nav>
+            <ul>
+                <li><a href="/Html/Home.html">Home</a></li>
+                <li><a href="/Html/WeddingJewelry.html">Wedding Jewelry</a></li>
+                <li><a href="/Html/Diamonds.html">Diamonds</a></li>
+                <li><a href="/Html/Profile.html">Profile</a></li>
+                <li><a href="/Html/Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-cart">
+            <input type="text" placeholder="Search products...">
+            <span class="cart-icon">🛒<span id="cart-count">0</span></span>
+        </div>
+    </header>
+    <section class="cart">
+        <h1>Your Cart</h1>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary">
+            <h3>Total: <span id="total-price">0 VND</span></h3>
+            <button id="checkout-btn">Checkout</button>
+        </div>
+        <div class="checkout-options">
+            <h3>Payment Options</h3>
+            <label>
+                <input type="radio" name="payment" value="cash" checked> Cash on Delivery
+            </label>
+            <label>
+                <input type="radio" name="payment" value="bank"> Bank Transfer
+            </label>
+            <h3>Shipping Information</h3>
+            <div class="input-group">
+                <label for="shippingAddress">Address:</label>
+                <input type="text" id="shippingAddress" placeholder="Enter your address" required>
+            </div>
+            <div class="input-group">
+                <label for="shippingPhone">Phone Number:</label>
+                <input type="text" id="shippingPhone" placeholder="Enter your phone number" required>
+            </div>
+        </div>
+    </section>
+    <div id="customAlert" class="custom-alert" style="display: none;">
+        <p id="alertMessage"></p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Images/logo.jpg" alt="Logo">
+                <p>Thương Gia Dương Jewelry</p>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <p>📍 532-534 Cong Hoa, Ward 13, Tan Binh District, Ho Chi Minh City</p>
+                <p>✉️ <a href="mailto:care@thuonggiaduong.com">care@thuonggiaduong.com</a></p>
+                <p>📞 1900 636 526 - (028) 62 818 818</p>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT US</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script src="Common.js"></script>
+    <script>
+        let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+        const totalPriceElement = document.getElementById("total-price");
+        // Định dạng giá (sử dụng hàm format)
+        function formatPrice(price) {
+            return price.toLocaleString("vi-VN") + " VND";
+        }
+        // Hiển thị giỏ hàng
+        function renderCart() {
+            cartItemsContainer.innerHTML = "";
+            let totalPrice = 0;
+            const consolidatedCart = cart.reduce((acc, item) => {
+                const existingItem = acc.find(i => i.name === item.name);
+                if (existingItem) {
+                    existingItem.quantity += item.quantity;
+                } else {
+                    acc.push({ ...item });
+                }
+                return acc;
+            }, []);
+            consolidatedCart.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+                const itemTotalPrice = item.price * item.quantity;
+                totalPrice += itemTotalPrice;
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-info">
+                        <p class="cart-item-name">${item.name}</p>
+                        <p class="cart-item-price">${formatPrice(item.price)} x ${item.quantity}</p>
+                        <p class="cart-item-total">Subtotal: ${formatPrice(itemTotalPrice)}</p>
+                    </div>
+                    <button class="remove-item-btn" data-name="${item.name}">Remove</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            totalPriceElement.textContent = formatPrice(totalPrice);
+            document.querySelectorAll(".remove-item-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    const name = this.dataset.name;
+                    removeFromCart(name);
+                });
+            });
+        }
+        document.getElementById("checkout-btn").addEventListener("click", function() {
+            const shippingAddress = document.getElementById("shippingAddress").value;
+            const shippingPhone = document.getElementById("shippingPhone").value;
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            // Kiểm tra nếu giỏ hàng rỗng
+            if (cart.length === 0) {
+                showAlert("Your cart is empty! Please add products to the cart before checking out.");
+                return;
+            }
+            if (!shippingAddress || !shippingPhone) {
+                showAlert("Please fill in all the shipping details.");
+                return;
+            }
+            const orderDetails = {
+                cartItems: cart,
+                shippingAddress: shippingAddress,
+                shippingPhone: shippingPhone,
+                paymentMethod: paymentMethod,
+                totalPrice: totalPriceElement.textContent
+            };
+            sessionStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+            showAlert("Your order has been successfully placed! We will contact you soon.");
+            cart = [];
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        });
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+        renderCart();
+    </script>
+</body>
+</html>
